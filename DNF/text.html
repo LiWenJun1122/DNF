@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function printArray(arr) {
+            for (var i in arr) {
+                if (arr[i] instanceof Array) {
+                    printArray(arr[i]);
+                } else {
+                    document.write(arr[i] + ' ');
+                }
+            }
+        }
+        var data = [1, [20, 21],
+            [
+                [301, 302],
+                [310, 311]
+            ]
+        ];
+        printArray(data);
+    </script>
+</body>
+
+</html>

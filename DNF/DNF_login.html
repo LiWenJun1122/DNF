@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+		  *{margin:0;padding:0;}
+			.div{width:100%;height:969px;
+			}
+			video{
+					width:100%;height:100%;
+			}
+			.login{
+					width:300px;height:284px;
+					background:#fff;
+					background:rgba(0,0,0,0.4);
+					position:absolute;
+					top:57%;
+					left:42%;
+			}
+		 	table{
+					width:100%;
+					padding:10px;
+					color:#fff;
+				}
+			.input{
+				width:240px;height:40px;
+				margin:15px;
+				border:0;outline:0;
+				border-radius:3%;
+			  font-size:18px;
+			}
+			#a{
+				text-decoration:none;
+				width:280px;height:40px;
+				background:-webkit-linear-gradient(top, #27b1f6 0%, #0aa1ed 100%);
+				border:0;outline:0;
+				display:inline-block;
+				text-align:center;
+				line-height:40px;
+				color:#fff;
+				border-radius:3%;
+				list-style:none;	
+
+			}
+			.a{
+				width:681px;height:100px;
+				display:block;
+				position:absolute;
+				top:441px;left:623px;
+			}
+		</style>	
+	</head>
+	<body>
+		<div class="div">
+			<video autoplay="autoplay" loop="loop">
+		  <source  src="video.mp4" type="video/mp4" >;
+			</video>
+			<a href="#" class="a"></a>
+			<div class="login">
+				<table>
+					<tr>
+						<td><h3>登录账号</h3></td>
+					</tr>
+					<tr>
+						<td>用户名:<input type="text" placeholder="请输入用户名" class="input"></td>
+					</tr>
+					<tr>
+						<td>密码:<input type="password" placeholder="请输入密码" class="input"></td>
+					</tr>
+					<tr>
+						<td><a href="#" id="a">登录</a></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</body>
+</html>

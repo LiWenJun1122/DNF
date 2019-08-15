@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type=text/css> 
+        *{margin:0;padding:0;border:0;} 
+        #fm { 
+            line-height: 24px; list-style-type: none;
+            background:#666; width:100%;}/*设置盒子的行高，去掉标记，设置背景颜色*/ 
+        #fm a { 
+            display: block; width: 80px; text-align:center;/*设置A标签为块元素不显示，宽度，居中*/
+        }
+        #fm li:link { color:#666; text-decoration:none; } /* 设置未访问的链接样式*/ 
+        #fm li:visited {
+                color:#666;text-decoration:none; } /* 设置已访问的链接样式 */ 
+        #fm li:hover {
+                color:#FFF;text-decoration:none;font-weight:bold; /* 当有鼠标悬停在链接上的颜色 */ 
+        } 
+        #fm li { float: left; width: 150px;
+        background:#CCC; } 
+        #fm li a:hover{ background:#999; } 
+        #fm li ul { line-height: 27px; list-style-type:
+        none;text-align:left; left: -999em; width: 80px; position: absolute; } 
+        #fm li ul li{ float: left; width: 80px;
+        background: #F6F6F6; } 
+        #fm li ul a{ display: block; width: 80px;width: 80px;text-align:left;padding-left:5px; }
+        #fm li:link { color:#666; text-decoration:none; } 
+        #fm li:visited { color:#666;text-decoration:none; }
+        #fm li:hover { color:#F3F3F3;text-decoration:none;font-weight:normal; background:#C00; } 
+        #fm li:hover ul { left: auto; } 
+        #fm li.sfhover ul { left: auto; } 
+        #content { clear: left; } 
+    </style> 
+</head> 
+<body>
+    <div>
+        <ul id=fm> 
+            <li>
+                <a href="#">一级菜单栏目</a> 
+                <ul> 
+                    <li><a href="#">一级菜单目录</a></li> 
+                    <li><a href="#">一级菜单目录</a></li> 
+                    <li><a href="#">一级菜单目录</a></li> 
+                    <li><a href="#">一级菜单目录</a></li>
+                </ul>
+            </li> 
+            <li>
+                <a href="#">二级菜单栏目</a> 
+                <ul> 
+                    <li><a href="#">二级菜单目录</a></li> 
+                    <li><a href="#">二级菜单目录</a></li> 
+                    <li><a href="#">二级菜单目录</a></li> 
+                    <li><a href="#">二级菜单目录</a></li> 
+                    <li><a href="#">二级菜单目录</a></li>
+                </ul>
+            </li> 
+            <li>
+                <a href="#">三级菜单栏目</a> 
+                <ul> 
+                    <li><a href="#">三级菜单目录</a></li> 
+                    <li><a href="#">三级菜单目录</a></li> 
+                    <li><a href="#">三级菜单目录</a></li> 
+                    <li><a href="#">三级菜单目录</a></li>
+                </ul>
+            </li> 
+            <li>
+                <a href="#">四级菜单栏目</a> 
+                <ul> 
+                    <li><a href="#">四级菜单目录</a></li> 
+                    <li><a href="#">四级菜单目录</a></li> 
+                    <li><a href="#">四级菜单目录</a></li> 
+                    <li><a href="#">四级菜单目录</a></li>
+                </ul>
+            </li> 
+        </ul>
+    </div>
+</body>
+
+</html>

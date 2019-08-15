@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>纯CSS实现点击事件展现隐藏div菜单列表</title>
+    <style>
+        /*样式预设，可根据自身情况设定增删*/
+        
+        .l-btn {
+            position: relative;
+            width: 1.875rem;
+            height: 1.875rem;
+        }
+        
+        .l-btn>a:first-child,
+        .l-btn>a:first-child+a {
+            width: 1.875rem;
+            height: 1.875rem;
+            line-height: 1.875rem;
+            text-align: center;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        
+        .l-btn>a:first-child+a+* {
+            position: absolute;
+            width: 20rem;
+            display: none;
+            /*这个样式可以设置透明度、高度等进行变换，配合CSS3过渡，达到更美观的效果，这里仅做功能*/
+        }
+        /*单独*/
+        
+        .l-btn>a:first-child {
+            display: block;
+        }
+        
+        .l-btn>a:first-child+a {
+            display: none;
+        }
+        /*-----为了方便理解，这里单独拿出来写，实际应用时可进行CSS分组合并----*/
+        
+        .l-btn>a:first-child:target {
+            display: none;
+        }
+        
+        .l-btn>a:first-child:target+a {
+            display: block;
+        }
+        
+        .l-btn>a:first-child:target+a+* {
+            display: block;
+            /*这里需要与上面设置的属性匹配*/
+        }
+    </style>
+</head>
+
+<body>
+    <div class="l-btn">
+        <a href="#l-btn-a" id="l-btn-a">三</a>
+        <a href="#l-btn-b" id="l-btn-b">X</a>
+        <div>我是菜单列表</div>
+    </div>
+</body>
+
+</html>

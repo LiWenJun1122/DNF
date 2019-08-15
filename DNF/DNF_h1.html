@@ -1,0 +1,598 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>DNF官网</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .d1 {
+            width: 100%;
+        }
+        
+        #flo {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 60px;
+            z-index: 999;
+        }
+        
+        #fm {
+            line-height: 24px;
+            list-style-type: none;
+            background: rgba(0, 0, 0, 0.1);
+            width: 100%;
+            float: left;
+        }
+        
+        #fm a {
+            display: block;
+            width: 100%;
+            text-align: center;
+            line-height: 60px;
+        }
+        
+        #fm a:link {
+            color: #fff;
+            text-decoration: none;
+        }
+        
+        #fm a:visited {
+            color: #fff;
+            text-decoration: none;
+        }
+        
+        #fm li:hover {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        #fm li {
+            float: left;
+            width: 20%;
+            background: -webkit-linear-gradient(top, #1a1a1f, rgba(0, 0, 0, 0.1));
+        }
+        
+        #fm li ul {
+            line-height: 27px;
+            list-style-type: none;
+            text-align: center;
+            left: -999em;
+            width: 20%;
+            position: absolute;
+        }
+        
+        #fm li ul li {
+            float: left;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: all .5s linear;
+        }
+        
+        #fm li ul a {
+            display: block;
+            width: 100%;
+            width: 100%;
+            text-align: center;
+        }
+        
+        #fm li ul a:link {
+            color: #666;
+            text-decoration: none;
+        }
+        
+        #fm li ul a:visited {
+            color: #fff;
+            text-decoration: none;
+        }
+        
+        #fm li:hover {
+            color: #1a1a1f;
+            text-decoration: none;
+            font-weight: normal;
+            background: -webkit-linear-gradient(top, #1a1a1f, rgba(0, 0, 0, 0.1));
+            transition: all .3s linear;
+        }
+        
+        #fm li:hover ul {
+            left: auto;
+        }
+        
+        #fm li ul li:hover {
+            text-decoration: none;
+            font-weight: normal;
+            background: rgba(0, 0, 0, 0.1);
+            transform: rotateX(45deg);
+        }
+        
+        #fm li ul li a:hover {
+            color: #b61d00;
+        }
+        
+        #fm li.sfhover ul {
+            left: auto;
+        }
+        
+        #content {
+            clear: left;
+        }
+        
+        .huodong {
+            display: inline-block;
+            width: 254px;
+            height: 62px;
+            text-align: center;
+            vertical-align: top;
+            background-image: url(spr.png);
+            margin: 13px 5px 8px;
+            padding: 0px 0 0 30px;
+            padding-top: 14px;
+        }
+        
+        .huodong:hover {
+            transform: scale(1.05);
+        }
+        
+        .huodong2 {
+            display: block;
+            width: 208px;
+            height: 57px;
+            text-align: center;
+            background-image: url(spr.png);
+            float: left;
+            margin: 10px 3px 20px;
+            padding-top: 20px;
+        }
+        
+        .huodong2:hover {
+            transform: scale(1.05);
+        }
+        
+        .huodong strong {
+            display: inline-block;
+            color: #f4dc7b;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        
+        .huodong em {
+            color: #f18db4;
+            text-decoration: none;
+            font-style: normal;
+            font-size: 14px;
+            display: inline-block;
+        }
+        
+        .huodong2 strong {
+            display: block;
+            color: #f991b8;
+        }
+        
+        .huodong2 p {
+            color: #ab95d9;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        
+        #a1 {
+            background-position: 0% 0%;
+            margin-left: 93px;
+        }
+        
+        #a2 {
+            background-position: 0% -100%;
+        }
+        
+        #a3 {
+            background-position: 0% -200%;
+        }
+        
+        #a4 {
+            background-position: -234% -102%;
+        }
+        
+        .my_div {
+            position: absolute;
+            top: 661px;
+            left: 414px;
+            width: 1080px;
+            z-index: 7;
+        }
+        
+        .gddh {
+            position: fixed;
+            top: 10%;
+            right: 10%;
+            background-image: url(nav_right.png);
+            width: 193px;
+            height: 731px;
+            z-index: 10;
+        }
+        
+        .aa2 {
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            color: #ffdaa8;
+            line-height: 25px;
+            margin-top: 1px;
+        }
+        
+        .aa2:hover {
+            background: url(nav_right_hover.png);
+            color: #f1eafa;
+        }
+        
+        #aa1 {
+            text-decoration: none;
+            color: #f1eafa;
+            display: block;
+            text-align: center;
+            margin: 0;
+            padding: 25px;
+            height: 73px;
+            margin-top: 79px;
+        }
+        
+        .tu {
+            margin-left: 25px;
+            white-space: nowrap;
+        }
+        
+        .d1 {
+            background: url(bg01.jpg) no-repeat center top;
+            width: 1903px;
+            height: 400px;
+        }
+        
+        .d2 {
+            background: url(bg02.jpg) no-repeat center top;
+            width: 1903px;
+            height: 400px;
+        }
+        
+        .d3 {
+            background: url(bg03.jpg) no-repeat center top;
+            width: 1903px;
+            height: 400px;
+        }
+        
+        .d4 {
+            background: url(bg04.jpg) no-repeat center top;
+            width: 1903px;
+            height: 400px;
+        }
+        
+        .d5 {
+            background: url(bg05.jpg) no-repeat center top;
+            width: 1903px;
+            height: 400px;
+        }
+        
+        .d6 {
+            background: url(bg06.jpg) no-repeat center top;
+            width: 1903px;
+            height: 963px;
+        }
+        
+        .ddd1 {
+            background: url(wrap.png) no-repeat center top;
+            position: absolute;
+            top: -7px;
+            width: 1903px;
+            height: 1003px;
+            z-index: 6;
+        }
+        
+        #more {
+            position: absolute;
+            left: 457px;
+            bottom: -124px;
+        }
+        
+        .a1 {
+            background-image: url(spr.png);
+            display: block;
+            width: 259px;
+            height: 257px;
+            background-position: 3px -543px;
+            position: absolute;
+            top: 397px;
+            left: 823px;
+            z-index: 2;
+        }
+        
+        .a1:hover {
+            background-image: url(spr.png);
+            display: block;
+            width: 259px;
+            height: 257px;
+            background-position: -265px -543px;
+        }
+        
+        .a2 {
+            background-image: url(spr.png);
+            display: block;
+            width: 190px;
+            height: 190px;
+            background-position: 0px -349px;
+            position: absolute;
+            top: 225px;
+            left: 449px;
+        }
+        
+        .a2:hover {
+            background-image: url(spr.png);
+            display: block;
+            width: 190px;
+            height: 190px;
+            background-position: -196px -349px;
+        }
+        
+        .a3 {
+            background-image: url(spr.png);
+            display: block;
+            width: 190px;
+            height: 190px;
+            background-position: 0px -349px;
+            position: absolute;
+            top: 225px;
+            left: 647px;
+        }
+        
+        .a3:hover {
+            background-image: url(spr.png);
+            display: block;
+            width: 190px;
+            height: 190px;
+            background-position: -196px -349px;
+        }
+        
+        .a4 {
+            background-image: url(spr.png);
+            display: block;
+            width: 190px;
+            height: 190px;
+            background-position: 0px -349px;
+            position: absolute;
+            top: 428px;
+            left: 449px;
+        }
+        
+        .a4:hover {
+            background-image: url(spr.png);
+            display: block;
+            width: 190px;
+            height: 190px;
+            background-position: -196px -349px;
+        }
+        
+        .a5 {
+            background-image: url(spr.png);
+            display: block;
+            width: 190px;
+            height: 190px;
+            background-position: 0px -349px;
+            position: absolute;
+            top: 428px;
+            left: 647px;
+        }
+        
+        .a5:hover {
+            background-image: url(spr.png);
+            display: block;
+            width: 190px;
+            height: 190px;
+            background-position: -196px -349px;
+        }
+        
+        .a6 {
+            background-image: url(spr.png);
+            display: block;
+            width: 190px;
+            height: 190px;
+            background-position: 0px -349px;
+            position: absolute;
+            top: 627px;
+            left: 449px;
+        }
+        
+        .a6:hover {
+            background-image: url(spr.png);
+            display: block;
+            width: 190px;
+            height: 190px;
+            background-position: -196px -349px;
+        }
+        
+        .a7 {
+            background-image: url(spr.png);
+            display: block;
+            width: 190px;
+            height: 190px;
+            background-position: 0px -349px;
+            position: absolute;
+            top: 627px;
+            left: 647px;
+        }
+        
+        .a7:hover {
+            background-image: url(spr.png);
+            display: block;
+            width: 190px;
+            height: 190px;
+            background-position: -196px -349px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div>
+            <div>
+                <div style="position:absolute;top:6rem;left:3rem;z-index:555;">
+                    <a href="#">
+                        <img src="logo.png" alt="">
+                    </a>
+                </div>
+                <div class="ddd1"></div>
+                <video style="width:1903px;z-index:10;" autoplay="autoplay" loop="loop">
+                    <source src="1.mp4" type="video/mp4">
+                </video>
+                <div class="my_div">
+                    <a id="a1" href="#" class="huodong">
+                        <strong>11周年登录畅享礼包</strong>
+                        <em>登录就送3件泰波尔斯史诗</em>
+                    </a>
+                    <a id="a2" href="#" class="huodong">
+                        <strong>累积在线赢好礼</strong>
+                        <em>在线送+11武器强化卷</em>
+                    </a>
+                    <a id="a3" href="#" class="huodong">
+                        <strong>周周惊喜乐开怀</strong>
+                        <em>签到就送泰波尔斯史诗</em>
+                    </a>
+                    <a id="a4" href="#" class="huodong2">
+                        <strong>普雷•伊希斯攻坚战</strong>
+                        <p>顶级武器和首饰特殊装备</p>
+                    </a>
+                    <a id="a4" href="#" class="huodong2">
+                        <strong>职业平衡性改版</strong>
+                        <p>39个职业全面优化</p>
+                    </a>
+                    <a id="a4" href="#" class="huodong2">
+                        <strong>公会系统改版</strong>
+                        <p>公会和界面全面改版</p>
+                    </a>
+                    <a id="a4" href="#" class="huodong2">
+                        <strong>副本改版及系统优化</strong>
+                        <p>难度下调 便利性优化</p>
+                    </a>
+                    <a id="a4" href="#" class="huodong2">
+                        <strong>其他改版</strong>
+                    </a>
+                    <a id="more" href="#">
+                        <img src="more.png" alt="">
+                    </a>
+                </div>
+
+            </div>
+            <div id="flo">
+                <ul id=fm>
+                    <li>
+                        <a href="#">公告</a>
+                        <ul>
+                            <li><a href="#">公告</a></li>
+                            <li><a href="#">公告</a></li>
+                            <li><a href="#">公告</a></li>
+                            <li><a href="#">公告</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">活动</a>
+                        <ul>
+                            <li><a href="#">活动</a></li>
+                            <li><a href="#">活动</a></li>
+                            <li><a href="#">活动</a></li>
+                            <li><a href="#">活动</a></li>
+                            <li><a href="#">活动</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">资讯</a>
+                        <ul>
+                            <li><a href="#">资讯</a></li>
+                            <li><a href="#">资讯</a></li>
+                            <li><a href="#">资讯</a></li>
+                            <li><a href="#">资讯</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">玩家社区</a>
+                        <ul>
+                            <li><a href="#">玩家</a></li>
+                            <li><a href="#">玩家</a></li>
+                            <li><a href="#">玩家</a></li>
+                            <li><a href="#">玩家</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">游戏资料</a>
+                        <ul>
+                            <li><a href="#">游戏资料</a></li>
+                            <li><a href="#">游戏资料</a></li>
+                            <li><a href="#">游戏资料</a></li>
+                            <li><a href="#">游戏资料</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="gddh">
+            <a href="#" id="aa1">十一周年登录享大礼</a>
+            <a href="#" class="aa2">十一周年</a>
+            <a href="#" class="aa2">十一周年</a>
+            <a href="#" class="aa2">十一周年</a>
+            <a href="#" class="aa2">十一周年</a>
+            <a href="#" class="aa2">十一周年</a>
+            <a href="#" class="aa2">十一周年</a>
+            <a href="#" class="aa2">十一周年</a>
+            <a href="#" class="aa2">十一周年</a>
+            <a href="#" class="aa2">十一周年</a>
+            <a href="#" class="aa2">十一周年</a>
+            <a href="#" class="aa2">十一周年</a>
+            <a href="#" class="aa2">十一周年</a>
+            <a href="#" class="aa2">十一周年</a>
+            <a href="#" class="aa2">十一周年</a>
+            <img style="margin:10px 49px;" src="ewm.jpg" alt="">
+        </div>
+    </div>
+    <!-- <div class="tu">
+        <table></table>
+        <a href="#">
+            <img src="../lb/lunbo5.jpeg" alt="">
+        </a>
+        <a href="#">
+            <img src="../lb/lunbo1.jpeg" alt="">
+        </a>
+        <a href="#">
+            <img src="../lb/lunbo2.jpeg" alt="">
+        </a>
+        <a href="#">
+            <img src="../lb/lunbo3.jpeg" alt="">
+        </a>
+    </div> -->
+    <div style="position: absolute;top:-7px;z-index:-1">
+        <div class="d1"></div>
+        <div class="d2"></div>
+        <div class="d3"></div>
+        <div class="d4"></div>
+        <div class="d5"></div>
+        <div class="d6"></div>
+
+    </div>
+    <div style="position:absolute;top:1003px;">
+        <a href="#" class="a1"></a>
+        <a href="#" class="a2"></a>
+        <a href="#" class="a3"></a>
+        <a href="#" class="a4"></a>
+        <a href="#" class="a5"></a>
+        <a href="#" class="a6"></a>
+        <a href="#" class="a7"></a>
+    </div>
+    <script>
+        var as = this.getElementByIdName("more");
+        setTimeout
+    </script>
+</body>
+
+</html>
